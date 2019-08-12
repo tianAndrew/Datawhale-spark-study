@@ -5,7 +5,11 @@
 import os
 os.environ['PYSPARK_PYTHON']='/usr/local/bin/pythonXXX' 
 ```
+<<<<<<< HEAD
 * Env variables
+=======
+* Env variables/n
+>>>>>>> 52c7bf2b56cbbf91e200b02654fbfe21b2094c35
 > Add sparkhome into path without bin because using bin/spark...
 > `PATH=$SPARK_HOME:$PATH`
 
