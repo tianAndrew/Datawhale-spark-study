@@ -11,11 +11,11 @@
 
 * [Create DataFrame](http://dblab.xmu.edu.cn/blog/1719-2/)
 
-'''
-spark=SparkSession.builder.getOrCreate()
-df = spark.read.json("file:///Users/andrew/DataWhale/Datawhale-spark-study/Task3/people.json")
+```
+>>> spark=SparkSession.builder.getOrCreate()
+>>> df = spark.read.json("file:///Users/andrew/DataWhale/Datawhale-spark-study/Task3/people.json")
 
-df.show()
+>>> df.show()
 +----+-------+
 | age|   name|
 +----+-------+
@@ -24,12 +24,12 @@ df.show()
 |  19| Justin|
 +----+-------+
 
-df.printSchema()
+>>> df.printSchema()
 root
  |-- age: long (nullable = true)
  |-- name: string (nullable = true)
 
-df.select(df.name,df.age + 1).show()
+>>> df.select(df.name,df.age + 1).show()
 +-------+---------+
 |   name|(age + 1)|
 +-------+---------+
@@ -38,14 +38,14 @@ df.select(df.name,df.age + 1).show()
 | Justin|       20|
 +-------+---------+
 
-df.filter(df.age>22 ).show()
+>>> df.filter(df.age>22 ).show()
 +---+----+
 |age|name|
 +---+----+
 | 30|Andy|
 +---+----+
 
-df.groupBy("age").count().show()
+>>> df.groupBy("age").count().show()
 +----+-----+
 | age|count|
 +----+-----+
@@ -54,7 +54,7 @@ df.groupBy("age").count().show()
 |  30|    1|
 +----+-----+
 
-df.sort(df.age.desc()).show()
+>>> df.sort(df.age.desc()).show()
 +----+-------+
 | age|   name|
 +----+-------+
@@ -63,7 +63,7 @@ df.sort(df.age.desc()).show()
 |null|Michael|
 +----+-------+
 
-df.sort(df.age.desc(), df.name.asc()).show()
+>>> df.sort(df.age.desc(), df.name.asc()).show()
 +----+-------+
 | age|   name|
 +----+-------+
@@ -72,7 +72,7 @@ df.sort(df.age.desc(), df.name.asc()).show()
 |null|Michael|
 +----+-------+
 
-df.select(df.name.alias("username"),df.age).show()
+>>> df.select(df.name.alias("username"),df.age).show()
 +--------+----+
 |username| age|
 +--------+----+
@@ -80,12 +80,16 @@ df.select(df.name.alias("username"),df.age).show()
 |    Andy|  30|
 |  Justin|  19|
 +--------+----+
-'''
+```
 
-### [Connect DataFrame by JDBC](http://dblab.xmu.edu.cn/blog/1724-2/)
+### Connect DataFrame by JDBC
+* [Connect DataFrame by JDBC](http://dblab.xmu.edu.cn/blog/1724-2/)
 
-### [Stream Computing](http://dblab.xmu.edu.cn/blog/1732-2/)
+### Stream Computing
+* [Stream Computing](http://dblab.xmu.edu.cn/blog/1732-2/)
 
-### [Spark Streaming](http://dblab.xmu.edu.cn/blog/1733-2/)
+### Spark Streaming
+* [Spark Streaming](http://dblab.xmu.edu.cn/blog/1733-2/)
 
-### [DStream Operation](http://dblab.xmu.edu.cn/blog/1737-2/) 
+### DStream Operation
+* [DStream Operation](http://dblab.xmu.edu.cn/blog/1737-2/) 
